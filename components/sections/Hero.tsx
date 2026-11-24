@@ -262,7 +262,7 @@ export default function Hero() {
             aria-hidden
             className="bg-accent hidden h-px w-[46px] md:block"
           />
-          Full-stack · Desktop · AI/ML · 2nd yr CSE
+          Full-stack · Desktop · AI/ML · 3rd yr CSE
         </p>
 
         <h1
@@ -301,9 +301,9 @@ export default function Hero() {
                 View Work <span aria-hidden>→</span>
               </a>
               <p className="text-dim font-mono text-[11px] leading-[1.7] tracking-[0.14em]">
-                8+ shipped products
+                10+ shipped products
                 <br />
-                1,331+ commits · solo
+                1,765+ commits · solo
               </p>
             </div>
           </div>

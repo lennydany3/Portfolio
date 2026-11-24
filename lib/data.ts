@@ -29,13 +29,13 @@ export type Project = {
 export const PROJECTS: Project[] = [
   {
     index: "01",
-    title: "Crest",
-    meta: "v0.6.x · Windows",
+    title: "Crest Notch",
+    meta: "Windows · Microsoft Store",
     status: "live",
     summary:
-      "The dynamic notch, built for Windows. A Mica-glass panel pinned to the top of any screen: media, files, notes, system load.",
+      "The dynamic notch, built for Windows. A Mica-glass panel pinned to the top of any screen: media, files, notes, clipboard history, system load.",
     detail:
-      "50+ installer downloads, organic. Tag-triggered NSIS releases via GitHub Actions. Microsoft Store submission next.",
+      "On the Microsoft Store as a signed MSIX, through certification and restricted-capability review. 50+ installer downloads, organic. Tag-triggered NSIS releases and auto-updates via GitHub Actions.",
     stack: ["Tauri 2", "Rust", "TypeScript", "React"],
     links: [
       { label: "Live", href: "https://crest-beta.vercel.app", primary: true },
@@ -47,16 +47,21 @@ export const PROJECTS: Project[] = [
   },
   {
     index: "02",
-    title: "Tide",
-    meta: "Mobile · Android / iOS",
+    title: "Orbit",
+    meta: "Windows · Voice agent",
     status: "shipped",
     summary:
-      "A habit tracker that keeps the streak honest. One Flutter codebase on both stores, offline first, with local reminders and a nightly review that closes the day.",
+      "Say “hey orbit” and it runs Windows for you: opens apps, arranges windows across monitors, drives Spotify, clicks controls by name or by picture.",
     detail:
-      "Selling on Gumroad. No backend to keep alive: the whole record lives on the device, so it works on a plane and costs nothing to run.",
-    stack: ["Flutter", "Dart", "SQLite"],
-    links: [],
-    note: "On Gumroad",
+      "Fast rules first, then LLM tool calling (Groq, or local Qwen2.5 via Ollama) with pydantic validation, a confirm-first gate on risky actions, and a router that verifies each effect. Speech stays on-device — Parakeet STT, Piper TTS, wake word. Covered by 1,888 Python and 334 Rust tests.",
+    stack: ["Python", "Rust", "wgpu", "Ollama"],
+    links: [
+      {
+        label: "GitHub",
+        href: "https://github.com/lennydany3/orbit",
+        primary: true,
+      },
+    ],
   },
   {
     index: "03",
@@ -64,39 +69,81 @@ export const PROJECTS: Project[] = [
     meta: "Mobile · Desktop · Web",
     status: "internal",
     summary:
-      "A 3-in-1 HR platform built solo: recruitment ATS, GPS-geofenced attendance, leave management.",
+      "A 3-in-1 HR platform built solo from one Flutter codebase: recruitment ATS, GPS-geofenced attendance, leave management.",
     detail:
-      "ZKTeco F22 biometrics over TCP/pyzk. API-level RBAC, 5 roles × 8 resources. S3 storage, Brevo SMTP.",
+      "A 3-stage applicant tracker with per-round scoring, tier labels and mandatory rejection reasons. ZKTeco F22 biometrics over TCP/pyzk as the second attendance mode. API-level RBAC, 5 roles × 8 resources. S3 storage, Brevo SMTP.",
     stack: ["Flutter", "FastAPI", "AWS S3", "pyzk"],
     links: [],
   },
   {
     index: "04",
-    title: "SIMS SmartAssist",
-    meta: "Kiosk · Hospital",
-    status: "shipped",
-    summary:
-      "A walk-in kiosk that lets patients register, book appointments and look up records without staff.",
-    detail:
-      "Wired into a hospital SOAP API. Designed for non-technical users: error-tolerant flows over feature density.",
-    stack: ["React", "Django", "SOAP API"],
-    links: [
-      { label: "GitHub", href: "https://github.com/lennydany3/SIMS-Kiosk" },
-    ],
-  },
-  {
-    index: "05",
     title: "NIC Platform",
     meta: "13 events · 1,800+ signups",
     status: "live",
     summary:
-      "Registration platform for every event of SRM IST's Nextgen Intelligence Club fest. 1,800+ live registrations.",
+      "Registration platform for every event of SRM IST's Nextgen Intelligence Club fest. Built solo in 18 days; 1,800+ live registrations.",
     detail:
-      "Redis rate limiting, client-side image compression, S3 storage, automated confirmations. Architected and maintained as Joint Head of Technical.",
-    stack: ["Next.js", "Supabase", "Upstash Redis", "AWS S3"],
+      "4-step registration, QR tickets, an admin console and a login for every event coordinator. Redis rate limiting, client-side image compression, R2 storage, automated confirmations. Architected and maintained as Joint Head of Technical.",
+    stack: ["Next.js", "Supabase", "Upstash Redis", "Cloudflare R2"],
     links: [
       { label: "Live", href: "https://nic-srm.vercel.app", primary: true },
-      { label: "GitHub", href: "https://github.com/lennydany3/NIC-Website" },
+    ],
+  },
+  {
+    index: "05",
+    title: "Heatwave",
+    meta: "Ticketing · Chennai",
+    status: "live",
+    summary:
+      "A live ticketing platform for a Chennai nightlife brand, selling entry online. Built and run through Ascendry.",
+    detail:
+      "A separate staging branch with its own Supabase project, so a new booking flow is tested before it ever reaches a paying customer.",
+    stack: ["Next.js", "Supabase", "Vercel"],
+    links: [
+      {
+        label: "Live",
+        href: "https://heatwave-chn.vercel.app",
+        primary: true,
+      },
+    ],
+    note: "Client work",
+  },
+  {
+    index: "06",
+    title: "SIMS SmartAssist",
+    meta: "Kiosk · Hospital",
+    status: "internal",
+    summary:
+      "A walk-in kiosk that lets patients register, book appointments and look up records without staff.",
+    detail:
+      "Wired into the hospital's SOAP API. Running on a DigitalOcean VPS and on an internal Ubuntu server for on-campus users. Built for non-technical users: error-tolerant flows over feature density.",
+    stack: ["Next.js", "FastAPI", "SOAP API", "DigitalOcean"],
+    links: [],
+  },
+  {
+    index: "07",
+    title: "KILA",
+    meta: "SIH 2026 · On-premise",
+    status: "build",
+    summary:
+      "A sovereign agentic AI workbench that runs open-weight multimodal models on-premise, fully offline. Built for MRPL's Smart India Hackathon problem statement.",
+    detail:
+      "A task classifier routes each request to the model that suits it. Next.js UI, SQLite and local file storage, so nothing leaves the building.",
+    stack: ["LangChain", "LangGraph", "Ollama", "Next.js"],
+    links: [],
+  },
+  {
+    index: "08",
+    title: "Tide",
+    meta: "Mobile · Offline-first",
+    status: "build",
+    summary:
+      "A habit tracker that keeps the streak honest. One Flutter codebase, offline first, with lightweight to-do lists alongside the habits.",
+    detail:
+      "No backend to keep alive: the whole record lives on the device in Hive/Isar, so it works on a plane and costs nothing to run. A free public release on Google Play is in prep.",
+    stack: ["Flutter", "Dart", "Hive/Isar"],
+    links: [
+      { label: "Live", href: "https://get-tide.vercel.app", primary: true },
     ],
   },
 ];
@@ -116,9 +163,27 @@ export type Stat = {
  * only ever seen if GitHub was unreachable.
  */
 export const STAT_BLOCKS: Stat[] = [
-  { id: "products", value: 8, suffix: "+", label: "PRODUCTS SHIPPED", decimals: 0 },
-  { id: "registrations", value: 1800, suffix: "+", label: "LIVE REGISTRATIONS", decimals: 0 },
-  { id: "commits", value: 1331, suffix: "", label: "GITHUB COMMITS", decimals: 0 },
+  {
+    id: "products",
+    value: 10,
+    suffix: "+",
+    label: "PRODUCTS SHIPPED",
+    decimals: 0,
+  },
+  {
+    id: "registrations",
+    value: 1800,
+    suffix: "+",
+    label: "LIVE REGISTRATIONS",
+    decimals: 0,
+  },
+  {
+    id: "commits",
+    value: 1765,
+    suffix: "",
+    label: "GITHUB COMMITS",
+    decimals: 0,
+  },
   { id: "cgpa", value: 8.49, suffix: "", label: "CGPA / 10", decimals: 2 },
 ];
 
@@ -156,16 +221,21 @@ export const STACK_GRID = [
   {
     label: "BACKEND / CLOUD",
     items:
-      "Django · DRF · FastAPI · Celery · PostgreSQL · AWS S3 · Upstash Redis",
+      "Django · DRF · FastAPI · Celery · PostgreSQL · SOAP · AWS S3 · Cloudflare R2 · Upstash Redis · DigitalOcean",
   },
   {
     label: "FRONTEND / MOBILE",
-    items: "React · Next.js · React Native · Flutter · Tauri",
+    items: "React · Next.js · React Native · Flutter · Tauri · GSAP",
   },
-  { label: "AI / ML", items: "LangChain · Ollama · Whisper · RAG · ChromaDB" },
+  {
+    label: "AI / ML",
+    items:
+      "LangChain · LangGraph · Ollama · RAG · ChromaDB · Whisper · CNNs (ResNet)",
+  },
   {
     label: "DEVOPS",
-    items: "Git · GitHub Actions · CI/CD · Docker · Vercel · Postman",
+    items:
+      "Git · GitHub Actions · CI/CD · Docker · Ubuntu · Vercel · MSIX / NSIS · Postman",
   },
   {
     label: "INTEGRATIONS",
@@ -173,7 +243,7 @@ export const STACK_GRID = [
   },
   {
     label: "LANGUAGES",
-    items: "Python · JavaScript / TypeScript · Dart · Rust · C / C++",
+    items: "Python · JavaScript / TypeScript · Dart · Rust · SQL",
   },
 ];
 
@@ -239,7 +309,7 @@ export const JOURNEY: Frame[] = [
     src: "/journey/07-portrait.jpeg",
     alt: "Studio portrait of Lenny Dany Derek D.",
     meta: "PORTRAIT · 2026",
-    caption: "Second year, eight products deep.",
+    caption: "Third year, ten products deep.",
     ratio: "square",
   },
 ];
@@ -276,7 +346,7 @@ export const PROCESS_STEPS: ProcessStep[] = [
   {
     index: "04",
     title: "Keep it running",
-    body: "Shipping starts the maintenance, it does not end the project. Eight products still up is the number that actually matters.",
+    body: "Shipping starts the maintenance, it does not end the project. Ten products still up is the number that actually matters.",
   },
 ];
 
@@ -319,7 +389,7 @@ export const REACH_CHANNELS: Channel[] = [
   },
   {
     label: "Ascendry",
-    href: "https://lenny3.vercel.app",
+    href: "https://ascendry.vercel.app",
     handle: "Udyam-registered",
     best: "Freelance builds. Web, mobile and desktop, scoped and shipped.",
   },
