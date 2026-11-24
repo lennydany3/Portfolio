@@ -17,6 +17,7 @@ export default function Hero() {
   const glow = useRef<HTMLDivElement>(null);
   const portrait = useRef<HTMLDivElement>(null);
   const cta = useMagnetic<HTMLAnchorElement>();
+  const resumeCta = useMagnetic<HTMLAnchorElement>();
 
   useGSAP(
     () => {
@@ -299,6 +300,15 @@ export default function Hero() {
                 className="bg-accent text-ink inline-flex w-full items-center justify-center gap-3.5 rounded-[2px] px-8 py-4 font-mono text-xs font-bold tracking-[0.2em] uppercase transition-shadow duration-300 will-change-transform hover:shadow-[0_0_44px_rgb(255_70_85_/_0.45)] sm:w-auto sm:py-5"
               >
                 View Work <span aria-hidden>→</span>
+              </a>
+              <a
+                ref={resumeCta}
+                href="/Lenny-Dany-Derek-D-Resume.pdf"
+                download="Lenny-Dany-Derek-D-Resume.pdf"
+                data-cursor-label="Download"
+                className="border-hair-3 text-hi hover:border-accent hover:text-accent inline-flex w-full items-center justify-center gap-3.5 rounded-[2px] border px-8 py-4 font-mono text-xs font-bold tracking-[0.2em] uppercase transition-colors duration-300 will-change-transform sm:w-auto sm:py-5"
+              >
+                Résumé <span aria-hidden>↓</span>
               </a>
               <p className="text-dim font-mono text-[11px] leading-[1.7] tracking-[0.14em]">
                 10+ shipped products
