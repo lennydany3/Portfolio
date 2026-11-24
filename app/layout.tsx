@@ -31,10 +31,10 @@ const jetBrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://lennydany.vercel.app"),
+  metadataBase: new URL("https://lennydany3.tech"),
   title: "Lenny Dany Derek D. — Full-stack · Desktop · AI/ML",
   description:
-    "I don't write the code, I ship the code. Full-stack, desktop and AI/ML engineer. 8+ shipped products, 1,800+ live registrations, built solo.",
+    "I don't write the code, I ship the code. Full-stack, desktop and AI/ML engineer. 10+ shipped products, 1,800+ live registrations, built solo.",
   keywords: [
     "Lenny Dany Derek",
     "full-stack developer",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Lenny Dany Derek D. — Full-stack · Desktop · AI/ML",
     description:
-      "I don't write the code, I ship the code. 8+ shipped products, built solo.",
+      "I don't write the code, I ship the code. 10+ shipped products, built solo.",
     type: "website",
     locale: "en_IN",
   },

@@ -27,7 +27,7 @@
 export const GITHUB_USER = "lennydany3";
 
 /** Last hand-counted total. Only used when every live source is unreachable. */
-export const COMMITS_FALLBACK = 1330;
+export const COMMITS_FALLBACK = 1765;
 
 /** Account creation year. Nothing can be counted before it. */
 const FIRST_YEAR = 2024;

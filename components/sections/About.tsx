@@ -203,7 +203,7 @@ export default function About({ github }: { github: GithubStats }) {
             ref={lead}
             className="text-hi font-display m-0 text-[clamp(24px,3vw,44px)] leading-[1.22] tracking-[-0.025em] text-pretty"
           >
-            Second-year CSE (AI &amp; ML) at SRM IST. I build production systems
+            Third-year CSE (AI &amp; ML) at SRM IST. I build production systems
             end-to-end: backend, frontend, infra, release pipeline, alone.
           </p>
 
@@ -211,12 +211,13 @@ export default function About({ github }: { github: GithubStats }) {
             ref={body}
             className="text-muted-2 m-0 max-w-[640px] text-base leading-[1.75] text-pretty md:text-lg"
           >
-            Native Windows overlays in Rust/Tauri. HRMS platforms on Flutter
-            with biometric attendance. Registration systems holding 1,800+ live
-            users. Three internships, one freelance venture (Ascendry,
-            Udyam-registered), and Tide, a habit tracker selling on Gumroad. The
-            pattern is the same every time: pick the hard part, ship it, keep it
-            running.
+            A native Windows overlay in Rust/Tauri, on the Microsoft Store. An
+            HRMS on Flutter with biometric attendance. Registration systems
+            holding 1,800+ live users. Three internships — SRM Group of
+            Companies, Nuke Technologies, BlueFish Consultancy — plus a
+            Udyam-registered studio of my own in Ascendry, and Loopify, a habit
+            tracker sold on Gumroad. The pattern is the same every time: pick
+            the hard part, ship it, keep it running.
           </p>
 
           <dl
